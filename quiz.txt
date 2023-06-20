@@ -1,0 +1,16 @@
+1. enterprise
+2. boilerplate code refers to common/standard code that is usually 
+included in almost every code project (ex. setters and getters for class 
+variables)
+3. spring
+4. pivotal software
+5. https://start.spring.io/
+6. standalone projects have no need for web servers and can run 
+independently
+7-9. dependency injection refers to the process of inserting objects into 
+other objects, wherein objects are designed to be independent of each 
+other so as to ensure a loosely coupled architecure between classes 
+without having to worry about external dependencies and how it functions 
+in your program
+10. mvn spring-boot:run
+
