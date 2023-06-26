@@ -4,6 +4,7 @@ import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +52,13 @@ public class AccountController {
     @GetMapping("{accountId}")
     public GetAccountResponse getAccount(@PathVariable String accountId) {
         Account account = accountService.get(accountId);
-        return createGetAccountResponse(account);
+        if (account != null) {
+            return createGetAccountResponse(account);
+        } else {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "account not found"
+            );
+        }
     }
 
     @GetMapping("accountlist")
